@@ -1,0 +1,59 @@
+source 'https://rubygems.org'
+
+gem 'rails', '4.2.6'
+gem 'therubyracer'
+gem 'sdoc', '~> 0.4.0', group: :doc
+
+# UI/UX
+gem 'slim-rails'
+gem 'jquery-rails'
+gem 'bootswatch-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'sass-rails', '>= 3.2'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'responders'
+
+# Authentication
+gem 'sorcery'
+
+# Database
+gem 'mysql2', '>= 0.3.13', '< 0.5'
+
+# Form
+gem 'simple_form'
+
+# Soft delete
+gem 'paranoia'
+
+# Seeds
+gem 'seed-fu'
+
+# Upload
+gem 'carrierwave'
+gem 'fog', require: 'fog/aws'
+gem 'mini_magick'
+
+group :development, :test do
+  # Debugger
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+
+  # Email
+  gem 'letter_opener_web'
+
+  # Code analyze
+  gem 'rubocop', '~> 0.39'
+
+  # Test
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+
+  # others
+  gem 'rename'
+end
+
+group :test do
+end
