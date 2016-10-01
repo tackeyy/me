@@ -1,0 +1,9 @@
+graph G {
+    users [shape=box];
+    posts [shape=box];
+    categories [shape=box];
+    tags [shape=box];
+    users -- posts [dir=forward, arrowhead=crow];
+    posts -- categories [dir=forward, arrowhead=crow];
+    posts -- tags [dir=forward, arrowhead=crow];
+  }
