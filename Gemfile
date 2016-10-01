@@ -19,6 +19,7 @@ gem 'sorcery'
 
 # Database
 gem 'mysql2', '>= 0.3.13', '< 0.5'
+gem 'ancestry'
 
 # Form
 gem 'simple_form'
