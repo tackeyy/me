@@ -38,10 +38,16 @@ gem 'mini_magick'
 
 group :development, :test do
   # Debugger
+  gem 'byebug'
+  gem 'better_errors'
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
+  gem 'pry-stack_explorer'
+
+  # Print debug
+  gem 'awesome_print'
 
   # Email
   gem 'letter_opener_web'

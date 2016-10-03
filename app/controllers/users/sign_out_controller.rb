@@ -1,6 +1,6 @@
 class Users::SignOutController < ApplicationController
   def destroy
     logout
-    redirect_to root_url
+    redirect_to users_sign_in_url
   end
 end

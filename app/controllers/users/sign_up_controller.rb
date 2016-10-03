@@ -10,7 +10,7 @@ class Users::SignUpController < ApplicationController
 
     return render :show if @user.errors.present?
 
-    redirect_to root_url
+    respond_with @user, location: edit_users_path, notice: 'サインインアップしました'
   end
 
   private
