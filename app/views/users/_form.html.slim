@@ -1,0 +1,8 @@
+= simple_form_for current_user, url: users_path, method: :patch do |form|
+  .panel.panel-default
+    .panel-heading
+      'ユーザー名
+    .panel-body
+      = form.input :name
+      = form.input :email, as: :email
+      = form.submit class: %w(btn btn-primary)

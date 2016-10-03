@@ -1,0 +1,17 @@
+ja:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name}を作成しました'
+        # alert: '%{resource_name} could not be created.'
+      update:
+        notice: '%{resource_name}を更新しました'
+        # alert: '%{resource_name} could not be updated.'
+      destroy:
+        notice: '%{resource_name}を削除しました'
+        alert: '%{resource_name}を削除できませんでした'
+  labels:
+    user:
+      name: 'ユーザー名'
+      email: 'メールアドレス'
+      password: 'パスワード'

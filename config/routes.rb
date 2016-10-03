@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'about', to: 'about#index'
 
   get 'dashboad', to: 'dashboad#index'
-  resource :users do
+  resource :users, only: [:edit, :update, :destroy] do
     resource :sign_up, controller: 'users/sign_up', only: [:show, :create]
     resource :sign_in, controller: 'users/sign_in', only: [:show, :create]
     resource :sign_out, controller: 'users/sign_out', only: [:destroy]
