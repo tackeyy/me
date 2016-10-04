@@ -1,0 +1,17 @@
+h1 class='page-header' マイページ
+.row
+  .col-md-4
+    = render 'users/menue', active: :tag
+  .col-md-8
+    .panel.panel-default
+      .panel-heading
+        'タグ
+      .panel-body
+        - if @tags.empty?
+          'タグがありません
+        - else
+          .list-group
+            - @tags.each do |tag|
+              = link_to '#', class: 'list-group-item' do
+                = tag.name
+
