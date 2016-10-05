@@ -7,11 +7,10 @@ h1 class='page-header' マイページ
       .panel-heading
         'タグ
       .panel-body
-        - if @tags.empty?
-          'タグがありません
-        - else
-          .list-group
-            - @tags.each do |tag|
-              = link_to '#', class: 'list-group-item' do
-                = tag.name
-
+        = link_to 'タグ編集', new_users_tag_path, class: %w(btn btn-success)
+      - if @tags.empty?
+        'タグがありません
+      - else
+        .list-group
+          - @tags.each do |tag|
+            .list-group-item = tag.name

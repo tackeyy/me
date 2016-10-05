@@ -3,18 +3,21 @@ class Users::TagsController < ApplicationController
     @tags = current_user.tags
   end
 
-  def show
-  end
-
-  def edit
-  end
-
-  def update
+  def new
+    current_user.tags.build if current_user.tags.size == 0
   end
 
   def create
+    binding.pry
+    current_user.update(tag_params)
+    respond_with current_user, location: users_tags_path, method: :get
   end
 
-  def destroy
+  private
+
+  def tag_params
+    params.require(:user).permit(
+      tags_attributes: [:id, :name, :_destroy]
+    )
   end
 end

@@ -24,6 +24,7 @@ gem 'ancestry'
 
 # Form
 gem 'simple_form'
+gem 'cocoon'
 
 # Soft delete
 gem 'paranoia'
