@@ -4,7 +4,14 @@ h1 class='page-header' マイページ
     = render 'users/menue', active: :category
   .col-md-8
     .panel.panel-default
+      .panel-heading
+        'カテゴリー
       .panel-body
-        p hoge
-        br
-        p hoge
+        = link_to 'カテゴリー編集', new_users_category_path, class: %w(btn btn-success)
+      .list-group
+      - if @categories.empty?
+         .list-group-item
+           'カテゴリーが登録されていません
+      - else
+        - @categories.each do |category|
+          .list-group-item = category.name

@@ -1,0 +1,16 @@
+h1 class='page-header' マイページ
+.row
+  .col-md-4
+    = render 'users/menue', active: :category
+  .col-md-8
+    .panel.panel-default
+      .panel-heading
+        'カテゴリー
+      .panel-body
+        = simple_form_for current_user, url: users_categories_path, method: :post do |form|
+          = form.simple_fields_for :categories do |field|
+            = render 'category_fields', f: field
+          .links
+            = link_to_add_association '追加', form, :categories, class: %w(btn btn-default)
+          hr
+            = form.submit class: %w(btn btn-primary)

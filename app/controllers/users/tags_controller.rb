@@ -8,7 +8,6 @@ class Users::TagsController < ApplicationController
   end
 
   def create
-    binding.pry
     current_user.update(tag_params)
     respond_with current_user, location: users_tags_path, method: :get
   end

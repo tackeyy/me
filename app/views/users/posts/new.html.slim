@@ -1,0 +1,12 @@
+h1 class='page-header' マイページ
+.row
+  .col-md-4
+    = render 'users/menue', active: :post
+  .col-md-8
+    .panel.panel-default
+      .panel-heading
+        '新規記事作成
+      .panel-body
+        = simple_form_for @post, url: users_posts_path, method: :post do |form|
+          = form.input :title
+          = form.input :content, as: :text

@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     resource :sign_in, controller: 'users/sign_in', only: [:show, :create]
     resource :sign_out, controller: 'users/sign_out', only: [:destroy]
     resources :posts, controller: 'users/posts'
-    resources :categories, controller: 'users/categories'
+    resources :categories, controller: 'users/categories', except:
+      [:show, :edit, :update]
     resources :tags, controller: 'users/tags', except: [:show, :edit, :update]
   end
 

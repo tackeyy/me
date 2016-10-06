@@ -1,0 +1,6 @@
+= simple_form_for @user, url: users_sign_up_path do |form|
+  = form.input :name
+  = form.input :email, as: :email
+  = form.input :password, as: :password
+  = form.input :password_confirmation, as: :password
+  = form.button :submit, 'sign up', class: 'btn-primary'
