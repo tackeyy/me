@@ -5,14 +5,15 @@ Rails.application.routes.draw do
   get 'about', to: 'about#index'
 
   get 'dashboad', to: 'dashboad#index'
-  resource :users, only: [:edit, :update, :destroy] do
+  resource :users, only: [:show, :edit, :update, :destroy] do
     resource :sign_up, controller: 'users/sign_up', only: [:show, :create]
     resource :sign_in, controller: 'users/sign_in', only: [:show, :create]
     resource :sign_out, controller: 'users/sign_out', only: [:destroy]
     resources :posts, controller: 'users/posts'
-    resources :categories, controller: 'users/categories', except:
-      [:show, :edit, :update]
-    resources :tags, controller: 'users/tags', except: [:show, :edit, :update]
+    resources :categories, controller: 'users/categories', only:
+      [:index, :create, :new]
+    resources :tags, controller: 'users/tags', only:
+      [:index, :create, :new]
   end
 
   namespace :blog do

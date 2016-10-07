@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def update
     current_user.update(user_params)
-    respond_with current_user, location: edit_users_path
+    respond_with current_user, location: users_path
   end
 
   private

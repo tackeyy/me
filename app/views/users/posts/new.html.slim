@@ -8,5 +8,13 @@ h1 class='page-header' マイページ
         '新規記事作成
       .panel-body
         = simple_form_for @post, url: users_posts_path, method: :post do |form|
-          = form.input :title
-          = form.input :content, as: :text
+          .panel.panel-default
+            .panel-heading
+              'タイトル
+            .panel-body
+              = form.input :title, label: false
+          .panel.panel-default
+            .panel-heading
+              '本文
+            .panel-body
+              = form.input :body, as: :text, label: false

@@ -1,0 +1,22 @@
+h1 class='page-header'
+  'マイページ
+.row
+  .col-md-4
+    = render 'users/menue', active: :account
+  .col-md-8
+    .panel.panel-default
+      .panel-heading
+        'アカウント
+      .panel-body
+        .panel.panel-default
+          .panel-heading
+            'ユーザー名
+          .panel-body
+            = current_user.name
+        .panel.panel-default
+          .panel-heading
+            'Eメール
+          .panel-body
+            = current_user.email
+        .div
+          = link_to '編集', edit_users_path, class: %w(btn btn-success)

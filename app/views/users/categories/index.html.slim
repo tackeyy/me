@@ -7,7 +7,7 @@ h1 class='page-header' マイページ
       .panel-heading
         'カテゴリー
       .panel-body
-        = link_to 'カテゴリー編集', new_users_category_path, class: %w(btn btn-success)
+        = link_to '編集', new_users_category_path, class: %w(btn btn-success)
       .list-group
       - if @categories.empty?
          .list-group-item

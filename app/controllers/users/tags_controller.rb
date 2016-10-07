@@ -4,7 +4,7 @@ class Users::TagsController < ApplicationController
   end
 
   def new
-    current_user.tags.build if current_user.tags.size == 0
+    current_user.tags.build if current_user.tags.empty?
   end
 
   def create

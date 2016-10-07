@@ -1,5 +1,5 @@
 .list-group
-  = link_to 'プロフィール', edit_users_path, class: ['list-group-item', active_class_if(active == :profile)]
+  = link_to 'アカウント', users_path, class: ['list-group-item', active_class_if(active == :account)]
   = link_to '記事', users_posts_path, class: ['list-group-item', active_class_if(active == :post)]
   = link_to 'カテゴリー', users_categories_path, class: ['list-group-item', active_class_if(active == :category)]
   = link_to 'タグ', users_tags_path, class: ['list-group-item', active_class_if(active == :tag)]

@@ -12,7 +12,12 @@ ja:
       default_message: "Please review the problems below:"
     labels:
       user:
+        name: 'ユーザー名'
         email: 'Eメール'
+        password: 'パスワード'
+      post:
+        title: 'タイトル'
+        body: '本文'
       tag:
         name: 'タグ名'
     # Examples
