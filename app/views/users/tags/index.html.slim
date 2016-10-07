@@ -1,0 +1,18 @@
+h1 class='page-header'
+  'マイページ
+.row
+  .col-md-4
+    = render 'users/menue', active: :tag
+  .col-md-8
+    .panel.panel-default
+      .panel-heading
+        'タグ
+      .panel-body
+        = link_to '編集', new_users_tag_path, class: %w(btn btn-success)
+      .list-group
+      - if @tags.empty?
+         .list-group-item
+           'カテゴリーが登録されていません
+      - else
+        - @tags.each do |tag|
+          .list-group-item = tag.name

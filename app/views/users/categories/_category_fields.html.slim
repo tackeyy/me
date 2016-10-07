@@ -1,0 +1,5 @@
+.nested-fields.row
+  .col-md-9
+    = f.input :name, label: false
+  .col-md-3
+    = link_to_remove_association '削除', f, class: %w(btn btn-danger)
