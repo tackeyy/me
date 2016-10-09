@@ -14,6 +14,7 @@ gem 'sass-rails', '>= 3.2'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'responders'
+gem 'draper'
 
 # Authentication
 gem 'sorcery'
@@ -21,6 +22,9 @@ gem 'sorcery'
 # Database
 gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'ancestry'
+
+# Enum
+gem 'enumerize'
 
 # Form
 gem 'simple_form'

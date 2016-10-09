@@ -12,7 +12,7 @@ h1 class='page-header'
       .list-group
       - if @tags.empty?
          .list-group-item
-           'カテゴリーが登録されていません
+           'タグが登録されていません
       - else
         - @tags.each do |tag|
           .list-group-item = tag.name

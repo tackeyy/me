@@ -17,4 +17,6 @@ h1 class='page-header' マイページ
             .panel-heading
               '本文
             .panel-body
-              = form.input :body, as: :text, label: false
+              = form.input :body, label: false, input_html: { rows: 30 }
+          = form.submit 'WIP', status: 0, class: %w(btn btn-default)
+          = form.submit '公開', status: 1, class: %w(btn btn-primary)

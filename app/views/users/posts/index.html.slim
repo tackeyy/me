@@ -8,10 +8,16 @@ h1 class='page-header' マイページ
         '記事一覧
       .panel-body
         = link_to '新規記事作成', new_users_post_path, class: %w(btn btn-success)
-      .list-group
-      - if @posts.empty?
-         .list-group-item
-           '記事がありません
-      - else
-        - @posts.each do |post|
-          .list-group-item = post.title
+        .list-group
+        - if @posts.empty?
+           .list-group-item
+             '記事がありません
+        - else
+          - @posts.each do |post|
+            .list-group-item.row
+              .col-md-8
+                = post.title
+              .col-md-2
+                = post.status_label
+              .col-md-2
+                '2016/10/01

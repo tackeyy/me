@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      post: '投稿'
+      category: 'カテゴリー'
+      tag: 'タグ'
+      attributes:
+        user:
+        post:
+        category:
+        tag:
+  enumerize:
+    post:
+      status:
+        wip: 'WIP'
+        done: '公開中'
