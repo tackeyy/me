@@ -30,6 +30,9 @@ gem 'enumerize'
 gem 'simple_form'
 gem 'cocoon'
 
+# MarkDown
+gem 'redcarpet'
+
 # Soft delete
 gem 'paranoia'
 

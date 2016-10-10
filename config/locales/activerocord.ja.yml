@@ -14,4 +14,4 @@ ja:
     post:
       status:
         wip: 'WIP'
-        done: '公開中'
+        published: '公開中'
