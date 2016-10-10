@@ -1,0 +1,10 @@
+= simple_form_for @post, url: users_post_path, method: :patch do |form|
+  .panel.panel-default
+    .panel-heading = Post.human_attribute_name(:title)
+    .panel-body
+      = form.input :title, label: false
+  .panel.panel-default
+    .panel-heading = Post.human_attribute_name(:body)
+    .panel-body
+      = form.input :body, label: false, input_html: { rows: 30 }
+  = form.submit class: %w(btn btn-primary)

@@ -1,6 +1,26 @@
-= simple_form_for @user, url: users_sign_up_path do |form|
-  = form.input :name
-  = form.input :email, as: :email
-  = form.input :password, as: :password
-  = form.input :password_confirmation, as: :password
-  = form.button :submit, 'sign up', class: 'btn-primary'
+h1 class='page-header' マイページ
+.row
+  .col-md-4
+    = render 'users/menue', active: :post
+  .col-md-8
+    .panel.panel-default
+      .panel-heading 記事詳細
+      .panel-body
+        = link_to '記事一覧', users_posts_path, class: %w(btn btn-success)
+        hr
+        .panel.panel-default
+          .panel-heading = Post.human_attribute_name(:title)
+          .panel-body
+            .row
+              .col-md-9
+                = @post.title
+              .col-md-1
+                = @post.status_label
+              .col-md-2
+                = @post.updated_at.to_s(:YYYYmmdd)
+        .panel.panel-default
+          .panel-heading = Post.human_attribute_name(:body)
+          .panel-body
+            .row
+              .col-md-12
+                = @post.body_as_markdown
