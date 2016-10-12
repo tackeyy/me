@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     resources :posts, controller: 'users/posts'
     resources :categories, controller: 'users/categories', only:
       [:index, :create, :new]
-    resources :tags, controller: 'users/tags', only:
-      [:index, :create, :new]
+    resources :tags, controller: 'users/tags', only: [:index, :create, :new]
+    get 'tag/list', to: 'users/tags#list'
   end
 
   namespace :blog do

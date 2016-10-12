@@ -25,4 +25,4 @@ h1 class='page-header' マイページ
       .panel.panel-default
         .panel-heading = Tag.model_name.human
         .panel-body
-          = form.input :tag_list, label: false, input_html: {value: @post.tag_list.to_s}
+          = form.input :tag_list, label: false, input_html: {id: 'js-magicsuggest', value: @post.tag_list.to_s}

@@ -19,6 +19,10 @@ class PostDecorator < Draper::Decorator
     markdown.render(model.body).html_safe
   end
 
+  def tag_label(tag_name)
+    h.content_tag(:span, tag_name, class: 'label label-default')
+  end
+
   def status_label
     label_color = model.status.wip? ? 'label-default' : 'label-primary'
     h.content_tag(:span, model.status_text, class: "label #{label_color}")

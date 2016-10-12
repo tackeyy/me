@@ -1,7 +1,5 @@
 h1 class='page-header' マイページ
 .row
-  .col-md-4
-    = render 'users/menue', active: :post
   .col-md-8
     .panel.panel-default
       .panel-heading 記事詳細
@@ -24,3 +22,16 @@ h1 class='page-header' マイページ
             .row
               .col-md-12
                 = @post.body_as_markdown
+  .col-md-4
+    .panel.panel-default
+      .panel-heading = Category.model_name.human
+      .panel-body ここにカテゴリー
+    .panel.panel-default
+      .panel-heading = Tag.model_name.human
+      .list-group
+      - if @post.tag_list.empty?
+         'タグがありません
+      - else
+        - @post.tag_list.each do |tag_name|
+          .list-group-item
+            = @post.tag_label(tag_name)

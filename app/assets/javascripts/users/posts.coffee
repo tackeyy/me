@@ -1,3 +1,15 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  ms = $('#js-magicsuggest').magicSuggest
+    required: true,
+    useTabKey: true,
+    autoSelect: true,
+    placeholder: 'タグを入力'
+
+  $(ms).on('load'
+    $.ajax
+      medhod: 'GET'
+      url: '/users/tag/list'
+      dataType: 'json',
+      success: (data) ->
+        ms.setData(data)
+  )

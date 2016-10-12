@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require cocoon
+//= require magicsuggest-min
 //= require_tree .
