@@ -1,10 +1,9 @@
 class Users::TagsController < ApplicationController
   def index
-    @tags = current_user.tags
+    @tag_names = current_user.tag_list
   end
 
   def new
-    current_user.tags.build if current_user.tags.empty?
   end
 
   def create

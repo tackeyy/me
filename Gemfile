@@ -26,6 +26,9 @@ gem 'ancestry'
 # Enum
 gem 'enumerize'
 
+# Polymophic
+gem 'acts-as-taggable-on', '~> 4.0'
+
 # Form
 gem 'simple_form'
 gem 'cocoon'

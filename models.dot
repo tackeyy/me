@@ -4,6 +4,8 @@ graph G {
     categories [shape=box];
     tags [shape=box];
     users -- posts [dir=forward, arrowhead=crow];
+    users -- categories [dir=forward, arrowhead=crow];
+    users -- tags [dir=forward, arrowhead=crow];
     posts -- categories [dir=forward, arrowhead=crow];
     posts -- tags [dir=forward, arrowhead=crow];
   }
