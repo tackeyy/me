@@ -1,22 +1,28 @@
 h1 class='page-header' マイページ
 .row
-  .col-md-4
-    = render 'users/menue', active: :post
-  .col-md-8
-    .panel.panel-default
-      .panel-heading
-        '新規記事作成
-      .panel-body
-        = simple_form_for @post, url: users_posts_path, method: :post do |form|
-          .panel.panel-default
-            .panel-heading
-              'タイトル
-            .panel-body
-              = form.input :title, label: false
-          .panel.panel-default
-            .panel-heading
-              '本文
-            .panel-body
-              = form.input :body, label: false, input_html: { rows: 30 }
-          = form.submit 'WIP', status: 0, class: %w(btn btn-default)
-          = form.submit '公開', status: 1, class: %w(btn btn-primary)
+  = simple_form_for @post, url: users_posts_path, method: :post do |form|
+    .col-md-8
+      .panel.panel-default
+        .panel-heading 新規作成
+        .panel-body
+            .panel.panel-default
+              .panel-heading
+                'タイトル
+              .panel-body
+                = form.input :title, label: false, input_html: { required: true }
+            .panel.panel-default
+              .panel-heading
+                '本文
+              .panel-body
+                = form.input :body, label: false, input_html: { rows: 30 }
+            = form.submit 'WIP', status: 0, class: %w(btn btn-default)
+            = form.submit '公開', status: 1, class: %w(btn btn-primary)
+    .col-md-4
+      .panel.panel-default
+        .panel-heading = Category.model_name.human
+        .panel-body
+          = form.input :category, label: false, input_html: {value: @post.tag_list.to_s}
+      .panel.panel-default
+        .panel-heading = Tag.model_name.human
+        .panel-body
+          = form.input :tag_list, label: false, input_html: {value: @post.tag_list.to_s}

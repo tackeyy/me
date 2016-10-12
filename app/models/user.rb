@@ -1,12 +1,17 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
+  acts_as_taggable
+
   has_many :posts
   has_many :categories
-  has_many :tags
 
-  accepts_nested_attributes_for :tags, reject_if: :all_blank, allow_destroy: true
-  accepts_nested_attributes_for :categories, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :tags,
+                                reject_if: :all_blank,
+                                allow_destroy: true
+  accepts_nested_attributes_for :categories,
+                                reject_if: :all_blank,
+                                allow_destroy: true
 
   validates :password,
             length: { minimum: 8 },
