@@ -16,6 +16,6 @@ class Users::SignInController < ApplicationController
       return render :show
     end
 
-    respond_with @user, location: edit_users_path, notice: 'サインインしました'
+    respond_with @user, location: users_path, notice: 'サインインしました'
   end
 end
