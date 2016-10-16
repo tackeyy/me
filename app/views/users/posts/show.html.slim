@@ -25,7 +25,9 @@ h1 class='page-header' マイページ
   .col-md-4
     .panel.panel-default
       .panel-heading = Category.model_name.human
-      .panel-body ここにカテゴリー
+      .list-group
+        .list-group-item
+          = @post.category.name
     .panel.panel-default
       .panel-heading = Tag.model_name.human
       .list-group

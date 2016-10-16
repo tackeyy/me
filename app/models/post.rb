@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   enumerize :status, in: { wip: 0, published: 1 }
 
   belongs_to :user
-  has_one :category
+  belongs_to :category
 
   accepts_nested_attributes_for :tags,
                                 reject_if: :all_blank,

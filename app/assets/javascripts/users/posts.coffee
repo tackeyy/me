@@ -1,5 +1,5 @@
 $ ->
-  ms = $('#js-magicsuggest').magicSuggest
+  ms = $('#js-tag-magicsuggest').magicSuggest
     required: true,
     useTabKey: true,
     autoSelect: true,

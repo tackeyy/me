@@ -16,7 +16,7 @@ class Users::CategoriesController < ApplicationController
 
   def category_params
     params.require(:user).permit(
-      categories_attributes: [:id, :name, :_destroy]
+      categories_attributes: [:id, :parent_id, :name, :_destroy]
     )
   end
 end

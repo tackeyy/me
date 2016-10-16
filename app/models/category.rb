@@ -2,5 +2,9 @@ class Category < ActiveRecord::Base
   has_ancestry
 
   belongs_to :user
-  belongs_to :post
+  has_many :post
+
+  def self.root
+    new(id: 0, name: '親フォルダなし')
+  end
 end

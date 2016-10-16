@@ -14,7 +14,6 @@ class Users::PostsController < ApplicationController
   end
 
   def create
-    binding.pry
     @post = current_user.posts.create(post_params)
     respond_with @post, location: users_posts_path
   end
@@ -36,7 +35,7 @@ class Users::PostsController < ApplicationController
   end
 
   def post_params
-    permited_params = params.require(:post).permit(:title, :body, :tag_list)
+    permited_params = params.require(:post).permit(:title, :category_id, :body, :tag_list)
     # FIXME tag_listが空になるため以下の処理を追加
     permited_params[:tag_list] = params[:post][:tag_list]
     permited_params[:status] = get_status

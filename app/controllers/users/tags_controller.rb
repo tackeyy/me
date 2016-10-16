@@ -18,7 +18,6 @@ class Users::TagsController < ApplicationController
   private
 
   def tag_params
-    binding.pry
     params.require(:user).permit(
       tags_attributes: [:id, :name, :_destroy]
     )

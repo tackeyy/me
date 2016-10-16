@@ -15,4 +15,5 @@
 //= require bootstrap-sprockets
 //= require cocoon
 //= require magicsuggest-min
+//= require select2
 //= require_tree .

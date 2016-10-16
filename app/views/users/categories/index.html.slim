@@ -10,8 +10,6 @@ h1 class='page-header' マイページ
         = link_to '編集', new_users_category_path, class: %w(btn btn-success)
       .list-group
       - if @categories.empty?
-         .list-group-item
-           'カテゴリーが登録されていません
+        .list-group-item カテゴリーが登録されていません
       - else
-        - @categories.each do |category|
-          .list-group-item = category.name
+        = nested_categories(@categories.arrange(order: :updated_at))

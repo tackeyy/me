@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20161010080757) do
     t.string   "ancestry",   limit: 255
   end
 
+  add_index "categories", ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id",     limit: 4
     t.integer  "category_id", limit: 4
