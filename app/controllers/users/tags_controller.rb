@@ -1,4 +1,6 @@
 class Users::TagsController < ApplicationController
+  before_action :require_login
+
   def index
     @tag_names = current_user.tag_counts_on(:tags).order('count DESC')
   end

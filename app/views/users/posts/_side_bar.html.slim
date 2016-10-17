@@ -1,0 +1,8 @@
+.panel.panel-default
+  .panel-heading = Category.model_name.human
+  .panel-body
+    = form.input :category_id, collection: current_user.categories, label: false, include_blank: true, input_html: { class: 'searchable', required: true }
+  .panel.panel-default
+    .panel-heading = Tag.model_name.human
+    .panel-body
+      = form.input :tag_list, label: false, input_html: {id: 'js-tag-magicsuggest', value: @post.tag_list.to_s }, class: 'required'

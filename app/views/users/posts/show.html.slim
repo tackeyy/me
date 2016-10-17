@@ -4,7 +4,9 @@ h1 class='page-header' マイページ
     .panel.panel-default
       .panel-heading 記事詳細
       .panel-body
-        = link_to '記事一覧', users_posts_path, class: %w(btn btn-success)
+        .btn-toolbar
+          = link_to '一覧', users_posts_path, class: %w(btn btn-default)
+          = link_to '編集', edit_users_post_path(@post), class: %w(btn btn-success)
         hr
         .panel.panel-default
           .panel-heading = Post.human_attribute_name(:title)
@@ -32,7 +34,7 @@ h1 class='page-header' マイページ
       .panel-heading = Tag.model_name.human
       .list-group
       - if @post.tag_list.empty?
-         'タグがありません
+         .list-group-item タグがありません
       - else
         - @post.tag_list.each do |tag_name|
           .list-group-item

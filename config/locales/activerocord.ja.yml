@@ -5,11 +5,13 @@ ja:
       post: '投稿'
       category: 'カテゴリー'
       tag: 'タグ'
-      attributes:
-        user:
-        post:
-        category:
-        tag:
+    attributes:
+      user:
+      post:
+        title: 'タイトル'
+        body: '内容'
+      category:
+      tag:
   enumerize:
     post:
       status:

@@ -11,4 +11,11 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :tags,
                                 reject_if: :all_blank,
                                 allow_destroy: true
+
+  validates :title,
+            presence: true
+  validates :body,
+            presence: true
+  validates :category_id,
+            presence: true
 end

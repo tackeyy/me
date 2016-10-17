@@ -1,8 +1,2 @@
 h1 class='page-header' マイページ
-.row
-  .col-md-8
-    .panel.panel-default
-      .panel-heading 記事詳細
-      .panel-body
-        = render 'form'
-  .col-md-4
+= render 'form', post: @post, url: users_post_path, method: :patch

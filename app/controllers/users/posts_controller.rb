@@ -1,4 +1,5 @@
 class Users::PostsController < ApplicationController
+  before_action :require_login
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
