@@ -16,11 +16,14 @@ html
               = link_to 'About', about_path
             li
               = link_to 'Blog', blog_posts_path
-            li
-              - if logged_in?
-                  = link_to 'Sign out', users_sign_out_path, method: :delete
-              - else
-                  = link_to 'Sign in', users_sign_in_path
+            - if logged_in?
+              li
+                = link_to 'マイページ', users_path
+              li
+                = link_to 'サインアウト', users_sign_out_path, method: :delete
+            - else
+              li
+                = link_to 'サインイン', users_sign_in_path
 
   body
     .container

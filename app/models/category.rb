@@ -5,7 +5,7 @@ class Category < ActiveRecord::Base
   has_many :post
 
   validates :name,
-            presence: ture
+            presence: true
 
   def self.root
     new(id: 0, name: '親フォルダなし')
