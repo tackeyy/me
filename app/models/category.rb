@@ -2,7 +2,7 @@ class Category < ActiveRecord::Base
   has_ancestry
 
   belongs_to :user
-  has_many :post
+  has_many :posts
 
   validates :name,
             presence: true

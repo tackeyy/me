@@ -27,4 +27,8 @@ class PostDecorator < Draper::Decorator
     label_color = model.status.wip? ? 'label-default' : 'label-primary'
     h.content_tag(:span, model.status_text, class: "label #{label_color}")
   end
+
+  def published_at
+    model.created_at.to_s(:YYYYmmdd)
+  end
 end

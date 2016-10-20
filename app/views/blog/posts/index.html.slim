@@ -1,6 +1,15 @@
 .row
   div class="col-md-8"
-    h3 ここに記事の一覧
+    - @posts.each do |post|
+      div class='bs-callout bs-callout-info'
+        h2 = post.title
+        .col-md-4
+          - post.tags.each do |tag|
+            = post.tag_label(tag)
+        .col-md-2
+          = post.category.name
+        .col-md-2
+          = post.published_at
   div class="col-md-4"
     h3 ここにサイドバー
 br
