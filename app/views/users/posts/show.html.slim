@@ -23,7 +23,7 @@ h1 class='page-header' マイページ
           .panel-body
             .row
               .col-md-12
-                = @post.body_as_markdown
+                = @post.body_as_html
   .col-md-4
     .panel.panel-default
       .panel-heading = Category.model_name.human

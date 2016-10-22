@@ -12,7 +12,7 @@ class PostDecorator < Draper::Decorator
     superscript:        true
   }.freeze
 
-  def body_as_markdown
+  def body_as_html
     renderer = Redcarpet::Render::HTML.new(OPTIONS)
     markdown = Redcarpet::Markdown.new(renderer, EXTENSIONS)
 
@@ -20,7 +20,7 @@ class PostDecorator < Draper::Decorator
   end
 
   def tag_label(tag_name)
-    h.content_tag(:span, tag_name, class: 'label label-default')
+    h.content_tag(:span, tag_name, class: 'label label-info')
   end
 
   def status_label
@@ -29,6 +29,6 @@ class PostDecorator < Draper::Decorator
   end
 
   def published_at
-    model.created_at.to_s(:YYYYmmdd)
+    model.created_at.to_s(:published_at)
   end
 end

@@ -1,0 +1,16 @@
+div class='article'
+  .row
+    h2 class='title'
+      = link_to post.title, blog_post_path(post)
+    .col-md-3
+      = fa_icon 'calendar', class: 'icon'
+      = post.published_at
+    .col-md-3
+      = fa_icon 'folder-open-o', class: 'icon'
+      = link_to post.category.name, '#'
+    .col-md-6
+      = fa_icon 'tags', class: 'icon'
+      - post.tags.each do |tag|
+        = link_to "##{tag} ", '#'
+  .row.body
+    = post.body_as_html

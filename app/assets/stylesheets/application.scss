@@ -3,14 +3,26 @@
 @import "magicsuggest";
 @import "select2";
 @import "select2-bootstrap";
+@import "font-awesome";
 
-.bs-callout {
-  padding: 20px;
-  margin: 20px 0;
-  border: 1px solid #eee;
-  border-left-width: 5px;
-  border-radius: 3px;
+.article {
+  padding: 0 0 30px 0;
 }
-.bs-callout-info {
-  border-left-color: #5bc0de;
+
+.title {
+  border-left: 4px solid #29abe2;
+  margin: 30px, 30px;
+  padding: 10px;
+}
+
+.body {
+  margin: 20px 4px 0 0;
+}
+
+.icon {
+  margin: 4px;
+}
+
+.badge {
+  margin: -4px 0 0 5px;
 }
