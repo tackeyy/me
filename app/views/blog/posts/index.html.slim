@@ -2,5 +2,6 @@
   div class="col-md-8"
     - @posts.each do |post|
       = render 'article', post: post
+    = paginate @posts
   div class="col-md-4"
     = render 'sidebar', posts: @posts, recent_posts: @recent_posts, tags: @tags

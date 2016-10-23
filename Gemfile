@@ -14,8 +14,13 @@ gem 'sass-rails', '>= 3.2'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'responders'
-gem 'draper'
 gem 'select2-rails'
+
+# Decorator
+gem 'draper'
+
+# Pagenation
+gem 'kaminari'
 
 # Authentication
 gem 'sorcery'
