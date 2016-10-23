@@ -1,5 +1,5 @@
 div class='article'
-  .row
+  .row.header
     h2 class='title'
       = link_to post.title, blog_post_path(post)
     .col-md-3
@@ -11,6 +11,6 @@ div class='article'
     .col-md-6
       = fa_icon 'tags', class: 'icon'
       - post.tags.each do |tag|
-        = link_to "##{tag} ", '#'
+        = link_to "##{tag.name} ", '#'
   .row.body
     = post.body_as_html

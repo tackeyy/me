@@ -7,10 +7,17 @@ index = 0
     user_id: 1,
     category_id: rand(1..Category.all.size),
     title: "これはタイトルです#{index}",
-    body: '### マークダウンでブログを書くよ
+    body: '### リスト
+
     - リスト
     - リスト
-    - リスト',
+    - リスト
+
+    ### 番号付きリスト
+    #
+    #1. 番号付きリスト
+    #1. 番号付きリスト
+    #1. 番号付きリスト',
     status: 'published',
     tag_list: "タグ#{rand(1..20)}, タグ#{rand(1..20)}, タグ#{rand(1..20)}"
   )

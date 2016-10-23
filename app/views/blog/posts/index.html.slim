@@ -3,4 +3,4 @@
     - @posts.each do |post|
       = render 'article', post: post
   div class="col-md-4"
-    = render 'sidebar', posts: @posts
+    = render 'sidebar', posts: @posts, recent_posts: @recent_posts, tags: @tags

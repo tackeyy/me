@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   extend Enumerize
 
+  RECENT_POSTS_CONT = 5
+
   acts_as_taggable
 
   enumerize :status, in: { wip: 0, published: 1 }

@@ -1,25 +1,30 @@
-.panel.panel-default
-  .panel-heading
-    = fa_icon 'pencil-square-o ', class: 'icon'
-    = "最近の#{Post.model_name.human}"
-  .panel-body
-    ul
-      - posts.each do |post|
-        li
-          = link_to post.title, '#'
-.panel.panel-default
-  .panel-heading
-    = fa_icon 'folder-open-o', class: 'icon'
-    = Category.model_name.human
-  .panel-body
-    ul
-      - @categories.each do |category|
-        li
-          = link_to category.name, '#'
-          span class='badge'
-            = category.posts.size
-.panel.panel-default
-  .panel-heading
-    = fa_icon 'tags', class: 'icon'
-    = Tag.model_name.human
-  .panel-body
+.sidebar
+  .panel.panel-default
+    .panel-heading
+      = fa_icon 'pencil-square-o ', class: 'icon'
+      = "最近の#{Post.model_name.human}"
+    .panel-body
+      ul
+        - recent_posts.each do |recent_post|
+          li
+            = link_to recent_post.title, '#'
+
+  .panel.panel-default
+    .panel-heading
+      = fa_icon 'folder-open-o', class: 'icon'
+      = Category.model_name.human
+    .panel-body
+      ul
+        - @categories.each do |category|
+          li
+            = link_to category.name, '#'
+            span class='badge'
+              = category.posts.size
+
+  .panel.panel-default
+    .panel-heading
+      = fa_icon 'tags', class: 'icon'
+      = Tag.model_name.human
+    .panel-body
+      - tag_cloud(tags, %w(s m l xl)) do |tag, css_class|
+        = link_to "#{tag.name}(#{tag.count}) ", '#', class: css_class

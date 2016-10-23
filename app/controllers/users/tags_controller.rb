@@ -2,7 +2,7 @@ class Users::TagsController < ApplicationController
   before_action :require_login
 
   def index
-    @tag_names = current_user.tag_counts_on(:tags).order('count DESC')
+    @tags = current_user.tags.order('taggings_count DESC')
   end
 
   def new
@@ -20,7 +20,7 @@ class Users::TagsController < ApplicationController
   private
 
   def tag_params
-    params.require(:user).permit(
+    params.require(:admin).permit(
       tags_attributes: [:id, :name, :_destroy]
     )
   end

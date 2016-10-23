@@ -10,9 +10,9 @@ h1 class='page-header'
       .panel-body
         = link_to '編集', new_users_tag_path, class: %w(btn btn-success)
       .list-group
-      - if @tag_names.empty?
+      - if @tags.present?
+        - @tags.each do |tag|
+          .list-group-item = tag.name
+      - else
          .list-group-item
            'タグが登録されていません
-      - else
-        - @tag_names.each do |tag_name|
-          .list-group-item = tag_name

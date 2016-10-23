@@ -19,10 +19,20 @@
   margin: 20px 4px 0 0;
 }
 
+.sidebar {
+  margin: 30px 0 0 0;
+}
+
 .icon {
   margin: 4px;
 }
 
 .badge {
-  margin: -4px 0 0 5px;
+  margin: -4px 0 0 8px;
 }
+
+// for tag cloud
+.s { font-size: 1.0em; }
+.m { font-size: 1.2em; }
+.l { font-size: 1.4em; }
+.xl { font-size: 1.6em; }

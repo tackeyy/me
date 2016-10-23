@@ -1,9 +1,8 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
-  acts_as_taggable
-
   has_many :posts
+  has_many :tags
   has_many :categories
 
   accepts_nested_attributes_for :tags,
