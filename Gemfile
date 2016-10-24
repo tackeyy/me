@@ -16,6 +16,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'responders'
 gem 'select2-rails'
 
+# Table/Schema
+gem 'annotate'
+
 # Decorator
 gem 'draper'
 
