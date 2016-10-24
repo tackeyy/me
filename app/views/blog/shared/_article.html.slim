@@ -1,7 +1,7 @@
 div class='article'
   .row.header
-    h2 class='title'
-      = link_to post.title, blog_post_path(post)
+    h4 class='title'
+      = link_to post.title, blog_post_path(post), class: 'coloer-black'
     .col-md-3
       = fa_icon 'calendar', class: 'icon'
       = post.published_at
@@ -11,6 +11,6 @@ div class='article'
     .col-md-6
       = fa_icon 'tags', class: 'icon'
       - post.tags.each do |tag|
-        = link_to "##{tag.name} ", '#'
+        = link_to "##{tag.name} ", blog_tag_path(tag)
   .row.body
     = post.body_as_html

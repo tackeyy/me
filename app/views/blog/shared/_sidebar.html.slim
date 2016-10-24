@@ -7,7 +7,7 @@
       ul
         - recent_posts.each do |recent_post|
           li
-            = link_to recent_post.title, '#'
+            = link_to recent_post.title, blog_post_path(recent_post)
 
   .panel.panel-default
     .panel-heading
@@ -17,7 +17,7 @@
       ul
         - @categories.each do |category|
           li
-            = link_to category.name, '#'
+            = link_to category.name, blog_category_path(category)
             span class='badge'
               = category.posts.size
 
@@ -27,4 +27,4 @@
       = Tag.model_name.human
     .panel-body
       - tag_cloud(tags, %w(s m l xl)) do |tag, css_class|
-        = link_to "#{tag.name}(#{tag.count}) ", '#', class: css_class
+        = link_to "#{tag.name}(#{tag.count}) ", blog_tag_path(tag), class: css_class

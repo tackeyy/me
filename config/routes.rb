@@ -14,5 +14,7 @@ Rails.application.routes.draw do
 
   namespace :blog do
     resources :posts, only: [:index, :show]
+    resources :categories, only: [:show]
+    resources :tags, only: [:show]
   end
 end
