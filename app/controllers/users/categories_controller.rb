@@ -17,7 +17,7 @@ class Users::CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:user).permit(
+    params.require(:admin).permit(
       categories_attributes: [:id, :parent_id, :name, :_destroy]
     )
   end

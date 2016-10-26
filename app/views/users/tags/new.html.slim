@@ -7,7 +7,7 @@ h1 class='page-header' マイページ
       .panel-heading
         'タグ
       .panel-body
-        = simple_form_for current_user, url: users_tags_path, method: :post do |form|
+        = simple_form_for current_user.posts, url: users_tags_path, method: :post do |form|
           = form.simple_fields_for :tags do |field|
             = render 'tag_fields', f: field
           .links

@@ -1,7 +1,8 @@
 .nested-fields.row
-  .col-md-3
-    = f.input :parent_id, collection: selectable_categories(f.object), label: false, selected: f.object.parent_id, include_blank: true, input_html: { class: 'searchable' }
-  .col-md-6
+  .col-md-9
     = f.input :name, label: false
   .col-md-3
-    = link_to_remove_association '削除', f, class: %w(btn btn-danger)
+    - if f.object.posts.empty?
+      = link_to_remove_association '削除', f, class: %w(btn btn-danger)
+    - else
+      = link_to_remove_association '削除', f, disabled: true, hint: 'カテゴリーが結びつく投稿があるため削除できません', class: %w(btn btn-danger)

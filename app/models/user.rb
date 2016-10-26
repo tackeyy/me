@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
   has_many :posts
-  has_many :tags
+  has_many :tags, through: :posts
   has_many :categories
 
   accepts_nested_attributes_for :tags,
