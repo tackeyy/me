@@ -41,7 +41,7 @@
 
 Rails.application.routes.draw do
   root 'home#index'
-  get 'about', to: 'about#index'
+  get 'profile', to: 'profile#index'
 
   resource :users, only: [:show, :edit, :update, :destroy] do
     resource :sign_up, controller: 'users/sign_up', only: [:show, :create]
