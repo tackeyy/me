@@ -18,6 +18,20 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.bottom-nav-element > a {
+  text-decoration: none;
+}
+
+.bottom-nav-element {
+  font-weight: 300;
+  font-size: 25px;
+  padding: 16px 32px;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
 .coloer-black {
   color: black
 }
@@ -26,36 +40,12 @@
   margin: 4px;
 }
 
-
-.home-title {
+.home h1 {
+  font-size: 50px;
+  text-align: center;
   margin-top: 15%;
 }
 
-.text-center {
-  text-align:center;
-}
-
-.l-wrapper {
-    margin: 0;
-    padding: 0;
-    font-family: 'Raleway', 'mplus-1p-regular', sans-serif;
-    font-weight: 300;
-}
-
-.l-header {
-  margin: 0;
-  height: 800px;
-  background-image: image-url('public-domain-images-free-stock-photos-Brussels-gallery-Architecture-shopping-1000x666.jpg');
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-}
-
-.l-h1 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 300;
-    color: #fff;
-    font-size: 80px;
-    text-align: center;
+.nav-area {
+  margin-top: 5%;
 }

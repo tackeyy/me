@@ -1,20 +1,17 @@
-.container
-  h1 class='text-center home-title'
+.container.home
+  h1
     'Yusuke takita's portfolio
-.container
-  ul class='nav nav-pills'
-    .col-md-4
-      li
-        = link_to profile_path do
-          = fa_icon 'user', class: 'coloer-black icon'
-          span class='coloer-black' Profile
-    .col-md-4
-      li
-        = link_to do
-          = fa_icon 'book', class: 'coloer-black icon'
-          span class='coloer-black' Works
-    .col-md-4
-      li
-        = link_to blog_posts_path do
-          = fa_icon 'pencil', class: 'coloer-black icon'
-          span class='coloer-black' Blog
+.container.nav-area
+  .bottom-nav
+    .col-md-3.col-xs-offset-1.bottom-nav-element
+      = link_to profile_path do
+        = fa_icon 'user', class: 'coloer-black icon'
+        span class='coloer-black' Profile
+    .col-md-3.col-xs-offset-1.bottom-nav-element
+      = link_to do
+        = fa_icon 'code', class: 'coloer-black icon'
+        span class='coloer-black' Works
+    .col-md-3.col-xs-offset-1.bottom-nav-element
+      = link_to blog_posts_path do
+        = fa_icon 'book', class: 'coloer-black icon'
+        span class='coloer-black' Blog
