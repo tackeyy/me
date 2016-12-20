@@ -17,9 +17,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'responders'
 gem 'select2-rails'
 
-# Table/Schema
-gem 'annotate'
-
 # Decorator
 gem 'draper'
 
@@ -42,6 +39,11 @@ gem 'acts-as-taggable-on', '~> 4.0'
 # Form
 gem 'simple_form'
 gem 'cocoon'
+
+# Application server
+gem 'unicorn'
+gem 'unicorn-rails'
+gem 'unicorn-worker-killer'
 
 # MarkDown
 gem 'redcarpet'
@@ -66,6 +68,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
+  gem 'rb-readline'
 
   # Print debug
   gem 'awesome_print'
@@ -73,15 +76,21 @@ group :development, :test do
   # Email
   gem 'letter_opener_web'
 
+  # Table/Schema
+  gem 'annotate'
+
   # Code analyze
   gem 'rubocop', '~> 0.39'
-
   # Test
   gem 'rspec-rails'
   gem 'factory_girl_rails'
 
-  # others
-  gem 'rename'
+  # Deploy
+  gem 'capistrano', '~> 3.4.0'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-unicorn'
 end
 
 group :test do
