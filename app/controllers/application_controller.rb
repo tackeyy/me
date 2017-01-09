@@ -15,7 +15,8 @@ class ApplicationController < ActionController::Base
   private
 
   def basic_auth
-    return if Rails.env.development?
+    # TODO productionで.envが読めてないみたい
+    return if Rails.env.development? || Rails.env.production?
     authenticate_or_request_with_http_basic do |user, pass|
       user == ENV['BASIC_AUTH_USER'] && pass == ENV['BASIC_AUTH_PASS']
     end
