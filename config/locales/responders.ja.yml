@@ -10,8 +10,3 @@ ja:
       destroy:
         notice: '%{resource_name}を削除しました'
         alert: '%{resource_name}を削除できませんでした'
-  labels:
-    user:
-      name: 'ユーザー名'
-      email: 'メールアドレス'
-      password: 'パスワード'

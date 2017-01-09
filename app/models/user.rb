@@ -30,8 +30,15 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :categories,
                                 reject_if: :all_blank,
                                 allow_destroy: true
+  validates :name,
+            presence: true
+
+  validates :email,
+            presence: true,
+            uniqueness: true
 
   validates :password,
+            presence: true,
             length: { minimum: 8 },
             confirmation: true,
             if: :new_record_or_changes_password
@@ -39,8 +46,6 @@ class User < ActiveRecord::Base
   validates :password_confirmation,
             presence: true,
             if: :new_record_or_changes_password
-
-  validates :email, uniqueness: true
 
   private
 
