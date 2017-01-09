@@ -15,6 +15,7 @@ ja:
         name: 'ユーザー名'
         email: 'Eメール'
         password: 'パスワード'
+        password_confirmation: 'パスワード確認'
       post:
         title: 'タイトル'
         body: '本文'
