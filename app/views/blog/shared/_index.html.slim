@@ -1,8 +1,8 @@
 .row
-  .col-md-7
+  .col-xs-7
     - posts.each do |post|
       = render 'blog/shared/article', post: post
     .center-block
       = paginate posts
-  .col-md-4
+  .col-xs-4
     = render 'blog/shared/sidebar', posts: posts, recent_posts: recent_posts, tags: tags

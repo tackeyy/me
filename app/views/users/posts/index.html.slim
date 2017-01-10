@@ -1,8 +1,8 @@
 h1 class='page-header' マイページ
 .row
-  .col-md-4
+  .col-md-4.col-xs-4
     = render 'users/menue', active: :post
-  .col-md-8
+  .col-md-8.col-xs-8
     .panel.panel-default
       .panel-heading
         '記事一覧
@@ -14,16 +14,16 @@ h1 class='page-header' マイページ
         - else
           - @posts.each do |post|
             .list-group-item.row
-              .col-md-6
+              .col-md-6.col-xs-6
                 = post.title
-              .col-md-1
+              .col-md-1.col-xs-1
                 = post.status_label
-              .col-md-2
+              .col-md-2.col-xs-2
                 = post.updated_at.to_s(:YYYYmmdd)
-              .col-md-3.row
-                .col-md-4
+              .col-md-3.col-xs-3.row
+                .col-md-4.col-xs-4
                   = link_to '', users_post_path(post), class: %w(glyphicon glyphicon-list-alt)
-                .col-md-4
+                .col-md-4.col-xs-4
                   = link_to '', edit_users_post_path(post), class: %w(glyphicon glyphicon-pencil)
-                .col-md-4
+                .col-md-4.col-xs-4
                   = link_to '', users_post_path(post), method: :delete, class: %w(glyphicon glyphicon-trash)
