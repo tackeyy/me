@@ -5,9 +5,12 @@
       = "最近の#{Post.model_name.human}"
     .panel-body
       ul
-        - recent_posts.each do |recent_post|
-          li
-            = link_to recent_post.title, blog_post_path(recent_post)
+        - if recent_posts.present?
+          - recent_posts.each do |recent_post|
+            li
+              = link_to recent_post.title, blog_post_path(recent_post)
+        - else
+          '最近の#{Post.model_name.human}はありません。
 
   .panel.panel-default
     .panel-heading
@@ -15,16 +18,23 @@
       = Category.model_name.human
     .panel-body
       ul
-        - @categories.each do |category|
-          li
-            = link_to category.name, blog_category_path(category)
-            span class='badge'
-              = category.posts.size
+        - if @categories.present?
+          - @categories.each do |category|
+            li
+              = link_to category.name, blog_category_path(category)
+              span class='badge'
+                = category.posts.size
+        - else
+          '#{Category.model_name.human}はありません。
 
   .panel.panel-default
     .panel-heading
       = fa_icon 'tags', class: 'icon'
       = Tag.model_name.human
     .panel-body
-      - tag_cloud(tags, %w(s m l xl)) do |tag, css_class|
-        = link_to "#{tag.name}(#{tag.count}) ", blog_tag_path(tag), class: css_class
+      - if tags.present?
+        - tag_cloud(tags, %w(s m l xl)) do |tag, css_class|
+          = link_to "#{tag.name}(#{tag.count}) ", blog_tag_path(tag), class: css_class
+      - else
+        ul
+          '#{Tag.model_name.human}はありません。

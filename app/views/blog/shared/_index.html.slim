@@ -1,8 +1,10 @@
-.row
-  .col-xs-7
+.col-xs-7
+  - if posts.present?
     - posts.each do |post|
       = render 'blog/shared/article', post: post
     .center-block
       = paginate posts
-  .col-xs-4
-    = render 'blog/shared/sidebar', posts: posts, recent_posts: recent_posts, tags: tags
+  - else
+    '#{Post.model_name.human}はありません。
+.col-xs-5
+  = render 'blog/shared/sidebar', posts: posts, recent_posts: recent_posts, tags: tags
