@@ -16,12 +16,12 @@ class Users::PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
-    respond_with @post, location: users_posts_path
+    respond_with @post, location: users_post_path(@post)
   end
 
   def update
     @post.update(post_params)
-    respond_with @post, location: users_posts_path
+    respond_with @post, location: users_post_path(@post)
   end
 
   def destroy
