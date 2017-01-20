@@ -4,6 +4,9 @@ gem 'rails', '4.2.6'
 gem 'therubyracer'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# config
+gem 'dotenv-rails'
+
 # UI/UX
 gem 'slim-rails'
 gem 'jquery-rails'
