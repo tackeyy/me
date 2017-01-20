@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
                                 reject_if: :all_blank,
                                 allow_destroy: true
   validates :name,
+            length: { maximum: 8 },
             presence: true
 
   validates :email,
