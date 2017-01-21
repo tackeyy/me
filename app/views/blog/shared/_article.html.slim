@@ -13,5 +13,5 @@
         = fa_icon 'tags', class: 'icon'
         - post.tags.each do |tag|
           = link_to "##{tag.name} ", blog_tag_path(tag)
-  .body
+  .article-text
     = post.body_as_html
