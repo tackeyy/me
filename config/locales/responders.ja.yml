@@ -2,11 +2,11 @@ ja:
   flash:
     actions:
       create:
-        notice: '%{resource_name}を作成しました'
-        # alert: '%{resource_name} could not be created.'
+        notice: '%{resource_name}を作成しました。'
+        alert: '%{resource_name}の作成に失敗しました。'
       update:
-        notice: '%{resource_name}を更新しました'
-        # alert: '%{resource_name} could not be updated.'
+        notice: '%{resource_name}の更新しました。'
+        alert: '%{resource_name}の更新に失敗しました。'
       destroy:
-        notice: '%{resource_name}を削除しました'
-        alert: '%{resource_name}を削除できませんでした'
+        notice: '%{resource_name}を削除しました。'
+        alert: '%{resource_name}を削除できませんでした。'
