@@ -1,4 +1,4 @@
-class Users::SignUpController < ApplicationController
+class Users::SignUpController < UserController
   skip_before_action :require_login
 
   def show

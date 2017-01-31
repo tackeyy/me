@@ -1,4 +1,4 @@
-class Users::PostsController < ApplicationController
+class Users::PostsController < UserController
   before_action :require_login
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 

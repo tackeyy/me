@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < UserController
   before_action :require_login
 
   def edit
