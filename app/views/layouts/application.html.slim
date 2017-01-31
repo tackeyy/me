@@ -2,47 +2,8 @@ doctype html
 html
   head
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application'
     = csrf_meta_tags
-    title
-      'Yusuke takita's portfolio
-
-    /nav class="navbar navbar-default" role="navigation"
-      div class="container-fluid"
-        div class="navbar-header"
-          = link_to 'Logo', root_path, class: "navbar-brand"
-        div class="navbar-collapse collapse"
-          ul id="nav" class="nav navbar-nav navbar-right"
-            li
-              = link_to 'About', about_path
-            li
-              = link_to 'Blog', blog_posts_path
-            - if logged_in?
-              li
-                = link_to 'マイページ', users_path
-              li
-                = link_to 'サインアウト', users_sign_out_path, method: :delete
-            - else
-              li
-                = link_to 'サインイン', users_sign_in_path
 
   body
-    .container-fluid
-      = render 'layouts/flash'
-      main
-        = yield
-
-    /footer
-      .container
-        p class="copyright" portfolio of yusuke TAKITA. \ © 2016 tackeyy
-
-        /nav class="navbar"
-          div class="container-fluid"
-            div class="navbar-collapse collapse"
-              ul id="nav" class="nav navbar-nav"
-                li
-                  = link_to 'https://twitter.com/3chhe', target: ['_blank'] do
-                    span class="glyphicon glyphicon-asterisk" aria-hidden="true"
-                li
-                  = link_to 'https://www.facebook.com/takita.yusuke', target: ['_blank'] do
-                    span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"
+    = yield

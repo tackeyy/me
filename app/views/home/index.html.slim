@@ -1,17 +1,151 @@
-.home
-  h1
-    'Yusuke takita's portfolio
-.nav-area
-  .bottom-nav
-    .col-xs-3.col-xs-offset-1.bottom-nav-element
-      = link_to profile_path do
-        = fa_icon 'user', class: 'coloer-black icon'
-        span class='coloer-black' Profile
-    .col-xs-3.col-xs-offset-1.bottom-nav-element
-      = link_to do
-        = fa_icon 'code', class: 'coloer-black icon'
-        span class='coloer-black' Works
-    .col-xs-3.col-xs-offset-1.bottom-nav-element
-      = link_to blog_posts_path, target: '_blank' do
-        = fa_icon 'book', class: 'coloer-black icon'
-        span class='coloer-black' Blog
+#drawer-right
+  .cross.text-right
+    a.toggleDrawer href="#"
+      i.fa.fa-times-circle.fa-2x
+  h2 Navigate
+  nav
+    ul.nav.nav-pills.nav-stacked
+      li
+        a href="#"
+          i.fa.fa-home
+          | Home
+      li
+        a href="#"
+          i.fa.fa-bookmark
+          | About
+      li
+        a href="#"
+          i.fa.fa-bookmark
+          | Works
+      li
+        a href="#"
+          i.fa.fa-wordpress
+          | Blog
+      li
+        a href="#"
+          i.fa.fa-phone-square
+          | Contact
+  .social
+    h2 Stay Connected
+    ul
+      li
+        a href=""
+          i.fa.fa-facebook-square.fa-3x
+      li
+        a href=""
+          i.fa.fa-twitter-square.fa-3x
+      li
+        a href=""
+          i.fa.fa-tumblr-square.fa-3x
+      li
+        a href=""
+          i.fa.fa-google-plus-square.fa-3x
+
+#wrapper
+  #header.content-block.header-wrapper
+    .header-wrapper-inner
+      section.top.clearfix
+        /.pull-left
+          h1
+            = link_to root_path do
+              /logo
+        .pull-right
+          a.toggleDrawer href="#"
+            i.fa.fa-bars.fa-2x
+      section.center
+        .slogan
+          'Yusuke takita's portfolio
+        /.secondary-slogan
+          | The Flusk Theme By ThemeWagon.
+      section.bottom
+        a#scrollToContent href="#"
+          = image_tag asset_path('images/arrow_down.png')
+
+  #portfolio.content-block
+    .container
+      header.block-heading.cleafix
+        a.btn.btn-o.btn-lg.pull-right href="#"  View All
+        h1 Latest Works
+        p Take a look at some of my recent works
+      section.block-body
+        .row
+          .col-sm-4
+            a.recent-work href="#" style="background-image:url(#{asset_path('images/rain_1-320x240.jpg')})"
+              span.btn.btn-o-white More detail
+          .col-sm-4
+            a.recent-work href="#" style="background-image:url(#{asset_path('images/min_icons_thumb1-320x240.jpg')})"
+              span.btn.btn-o-white More detail
+          .col-sm-4
+            a.recent-work href="#" style="background-image:url(#{asset_path('images/flat_icons_thumb.jpg')})"
+              span.btn.btn-o-white More detail
+        .row
+          .col-sm-4
+            a.recent-work href="#" style="background-image:url(#{asset_path('images/wood-320x240.jpg')})"
+              span.btn.btn-o-white More detail
+          .col-sm-4
+            a.recent-work href="#" style="background-image:url(#{asset_path('images/bike-320x240.jpg')})"
+              span.btn.btn-o-white More detail
+          .col-sm-4
+            a.recent-work href="#" style="background-image:url(#{asset_path('images/six_1-320x240.jpg')})"
+              span.btn.btn-o-white More detail
+
+  #services.content-block.parallax
+    .container.text-center
+      header.block-heading.cleafix
+        h1 Profile
+        p A little about what I do
+      section.block-body
+        .row
+          .col-md-4
+            .service
+              i.fa.fa-send-o
+              h2 Illustration
+              p In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.
+          .col-md-4
+            .service
+              i.fa.fa-heart-o
+              h2 3D Modeling
+              p In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.
+          .col-md-4
+            .service
+              i.fa.fa-camera-retro
+              h2 Photography
+              p In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.
+
+  #blog.content-block
+    .container
+      header.block-heading.cleafix
+        a.btn.btn-o.btn-lg.pull-right href="#"  View All
+        h1 Latest posts
+        p Keep up with the latest happenings.
+      section.block-body
+        .row
+          .col-sm-4.blog-post
+            = link_to root_path do
+              = image_tag asset_path('images/bike_water1-1000x600.jpg')
+            h2 Design Your Mind
+            .date 3 Nov, 2014
+            p In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.
+            a href=""  Read More
+          .col-sm-4.blog-post
+            = link_to root_path do
+              = image_tag asset_path('images/mac_glasses1-1000x600.jpg')
+            h2 Winter Is Comming
+            .date 3 Nov, 2014
+            p In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.
+            a href=""  Read More
+          .col-sm-4.blog-post
+            = link_to root_path do
+              = image_tag asset_path('images/road-1000x600.jpg')
+            h2 The Illustration
+            .date 3 Nov, 2014
+            p In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.
+            a href=""  Read More
+  /! #contact
+  #footer.content-block
+    .container
+      .row
+        .col-xs-6 &copy; Copyright Yusuke Takita 2017
+        .col-xs-6.text-right
+          | Theme by
+          a href="#"  ThemeWagon
