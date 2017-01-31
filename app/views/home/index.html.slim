@@ -58,7 +58,7 @@
         /.secondary-slogan
           | The Flusk Theme By ThemeWagon.
       section.bottom
-        a#scrollToContent href="#"
+        = link_to '#', id: 'scrollToContent' do
           = image_tag asset_path('images/arrow_down.png')
 
   #portfolio.content-block
