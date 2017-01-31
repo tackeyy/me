@@ -1,4 +1,4 @@
-class Users::CategoriesController < ApplicationController
+class Users::CategoriesController < UserController
   before_action :require_login
 
   def index

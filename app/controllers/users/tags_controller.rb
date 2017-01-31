@@ -1,4 +1,4 @@
-class Users::TagsController < ApplicationController
+class Users::TagsController < UserController
   before_action :require_login
 
   def index
