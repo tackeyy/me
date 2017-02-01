@@ -31,4 +31,9 @@ class PostDecorator < Draper::Decorator
   def published_at
     model.created_at.to_s(:published_at)
   end
+
+  def eye_catch_img_path(index)
+    return 'images/bike_water1-1000x600.jpg' if index == 0
+    index.odd? ? 'images/mac_glasses1-1000x600.jpg' : 'images/road-1000x600.jpg'
+  end
 end

@@ -6,40 +6,30 @@
   nav
     ul.nav.nav-pills.nav-stacked
       li
-        a href="#"
+        a href="#wrapper"
           i.fa.fa-home
-          | Home
+            '  Home
       li
-        a href="#"
+        a href="#portfolio"
           i.fa.fa-bookmark
-          | About
+            '  Portfolio
       li
-        a href="#"
-          i.fa.fa-bookmark
-          | Works
-      li
-        a href="#"
+        a href="#blog"
           i.fa.fa-wordpress
-          | Blog
+            '  Blog
       li
-        a href="#"
+        a href="#contact"
           i.fa.fa-phone-square
-          | Contact
+            '  Contact
   .social
     h2 Stay Connected
     ul
       li
-        a href=""
+        = link_to 'https://www.facebook.com/takita.yusuke' do
           i.fa.fa-facebook-square.fa-3x
       li
-        a href=""
+        = link_to root_path do
           i.fa.fa-twitter-square.fa-3x
-      li
-        a href=""
-          i.fa.fa-tumblr-square.fa-3x
-      li
-        a href=""
-          i.fa.fa-google-plus-square.fa-3x
 
 #wrapper
   #header.content-block.header-wrapper
@@ -98,54 +88,57 @@
         .row
           .col-md-4
             .service
-              i.fa.fa-send-o
-              h2 Illustration
-              p In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.
+              i.fa.fa-code
+              h2 Engineer
+              p ERPのHR領域のエンジニアから<br>Webエンジニアになりました。<br>おもにRuby on Railsを触ってます。
           .col-md-4
             .service
-              i.fa.fa-heart-o
-              h2 3D Modeling
-              p In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.
+              i.fa.fa-futbol-o
+              h2 Footballer
+              p 趣味でフットサルをやります。<br>安定した守備とビルドアップを提供しますので、<br>助っ人が必要な時はお声がけください。
           .col-md-4
             .service
-              i.fa.fa-camera-retro
-              h2 Photography
-              p In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.
+              i.fa.fa-book
+              h2 Books
+              p 本を読むのが好きです。<br>エンジニアになる前は、<br>経営学に関する本をよく読んでいたので、<br>その領域の主要な本は読んでいます。<br>（という勘違いをしています）
 
   #blog.content-block
     .container
       header.block-heading.cleafix
-        a.btn.btn-o.btn-lg.pull-right href="#"  View All
+        = link_to 'View All', blog_posts_path, class: %w(btn btn-o btn-lg pull-right), target: '_blank'
         h1 Latest posts
         p Keep up with the latest happenings.
       section.block-body
         .row
-          .col-sm-4.blog-post
-            = link_to root_path do
-              = image_tag asset_path('images/bike_water1-1000x600.jpg')
-            h2 Design Your Mind
-            .date 3 Nov, 2014
-            p In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.
-            a href=""  Read More
-          .col-sm-4.blog-post
-            = link_to root_path do
-              = image_tag asset_path('images/mac_glasses1-1000x600.jpg')
-            h2 Winter Is Comming
-            .date 3 Nov, 2014
-            p In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.
-            a href=""  Read More
-          .col-sm-4.blog-post
-            = link_to root_path do
-              = image_tag asset_path('images/road-1000x600.jpg')
-            h2 The Illustration
-            .date 3 Nov, 2014
-            p In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.
-            a href=""  Read More
-  /! #contact
+          - @posts.each_with_index do |post, i|
+            .col-sm-4.blog-post
+              = link_to root_path do
+                // TODO: いったんアイキャッチは固定
+                = image_tag asset_path(post.eye_catch_img_path(i))
+              h2 = post.title
+              .date = post.updated_at.to_s(:YYYYmmdd)
+              p = post.body.truncate(60)
+              = link_to 'Read More', blog_post_path(post)
+
+  #contact.content-block
+    .container.text-center
+      header.block-heading.cleafix
+        h1 Contact Us
+        p Feel free to drop me a line.
+      section.block-body
+        .row
+          .col-md-6.col-md-offset-3
+            form role="form"
+              .form-group
+                input#subject.form-control.form-control-white placeholder=("Your Name") required="" type="email" /
+              .form-group
+                input#exampleInputEmail2.form-control.form-control-white placeholder=("Enter email") required="" type="email" /
+              .form-group
+                textarea.form-control.form-control-white placeholder=("Write Something") required=""
+              input.btn.btn-o-white type="submit" value=("Say Hello") /
+
   #footer.content-block
     .container
       .row
-        .col-xs-6 &copy; Copyright Yusuke Takita 2017
-        .col-xs-6.text-right
-          | Theme by
-          a href="#"  ThemeWagon
+        .col-xs-6 &copy; 2017 Yusuke Takita
+        .col-xs-6.text-right Powered by Nginx x Ruby on Rails

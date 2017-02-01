@@ -16,6 +16,7 @@ class Post < ActiveRecord::Base
   extend Enumerize
 
   RECENT_POSTS_CONT = 5
+  LATEST_POSTS_COUNT = 3
 
   acts_as_taggable
 
