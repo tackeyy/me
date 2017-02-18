@@ -112,7 +112,7 @@
         .row
           - @posts.each_with_index do |post, i|
             .col-sm-4.blog-post
-              = link_to root_path do
+              = link_to blog_post_path(post) do
                 // TODO: いったんアイキャッチは固定
                 = image_tag asset_path(post.eye_catch_img_path(i))
               h2 = post.title

@@ -16,5 +16,6 @@
 #= require cocoon
 #= require magicsuggest-min
 #= require jquery.scrollTo.min
+#= require select2
 #= require script
 #= require_tree .
