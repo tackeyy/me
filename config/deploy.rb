@@ -41,12 +41,9 @@ after 'deploy:publishing', 'deploy:restart'
 before 'deploy:migrate', 'deploy:db_create'
 
 namespace :deploy do
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+  task :restart do
+    on roles(:app), in: :sequence, wait: 15 do
+      invoke 'unicorn:legacy_restart'
     end
   end
 
