@@ -12,9 +12,3 @@ dependencies:
     - bundle -j4 --path=vendor/bundle
   pre:
     - gem install bundler --pre
-test:
-  pre:
-    - sudo service redis-server start
-    - sudo apt-get install fonts-migmix
-  override:
-    - bundle exec rake spec
