@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - "vendor/**/*"
     - "db/**/*"
+    - "lib/**/*"
     - "bin/**/*"
     - "spec/**/*"
     - "Capfile"
@@ -27,4 +28,10 @@ Metrics/AbcSize:
   Max: 30
 
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Metrics/LineLength:
   Enabled: false

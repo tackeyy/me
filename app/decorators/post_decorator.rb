@@ -16,7 +16,7 @@ class PostDecorator < Draper::Decorator
     renderer = Redcarpet::Render::HTML.new(OPTIONS)
     markdown = Redcarpet::Markdown.new(renderer, EXTENSIONS)
 
-    markdown.render(model.body).html_safe
+    markdown.render(model.body).safe_join
   end
 
   def tag_label(tag_name)
