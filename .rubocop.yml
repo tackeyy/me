@@ -5,9 +5,11 @@ Rails:
     - "db/**/*"
     - "bin/**/*"
     - "spec/**/*"
+    - "Capfile"
+    - "Rakefile"
+    - "config.ru"
 
   DisplayCopNames: true
-
   RunRailsCops: true
 
 Style/Documentation:
@@ -15,3 +17,12 @@ Style/Documentation:
 
 Style/MultilineOperationIndentation:
   EnforcedStyle: indented
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 30
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
