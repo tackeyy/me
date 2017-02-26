@@ -1,6 +1,5 @@
-AllCops:
-  Rails:
-    Enabled: true
+Rails:
+  Enabled: true
   Exclude:
     - "vendor/**/*"
     - "db/**/*"
