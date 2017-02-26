@@ -12,3 +12,7 @@ dependencies:
     - bundle -j4 --path=vendor/bundle
   pre:
     - gem install bundler --pre
+test:
+  pre:
+    - bundle exec rubocop
+
