@@ -10,7 +10,7 @@ class Users::SignInController < UserController
     @user = login(email, password)
 
     if @user.blank?
-      @user = User.new(email: email).tap do  |user|
+      @user = User.new(email: email).tap do |user|
         user.errors.add(:email, :not_found_or_invalid_password)
       end
       return render :show

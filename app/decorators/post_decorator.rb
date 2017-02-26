@@ -33,7 +33,7 @@ class PostDecorator < Draper::Decorator
   end
 
   def eye_catch_img_path(index)
-    return 'images/bike_water1-1000x600.jpg' if index == 0
+    return 'images/bike_water1-1000x600.jpg' if index.zero?
     index.odd? ? 'images/mac_glasses1-1000x600.jpg' : 'images/road-1000x600.jpg'
   end
 end

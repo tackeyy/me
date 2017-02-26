@@ -8,7 +8,8 @@ Rails:
     - "Capfile"
     - "Rakefile"
     - "config.ru"
-
+    - "bin/setup"
+    - "config/**/*"
   DisplayCopNames: true
   RunRailsCops: true
 

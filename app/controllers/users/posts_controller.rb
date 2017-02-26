@@ -37,7 +37,7 @@ class Users::PostsController < UserController
 
   def post_params
     permited_params = params.require(:post).permit(:title, :category_id, :body, :tag_list)
-    # FIXME tag_listが空になるため以下の処理を追加
+    # FIXME: tag_listが空になるため以下の処理を追加
     permited_params[:tag_list] = params[:post][:tag_list]
     permited_params[:status] = get_status
     permited_params
