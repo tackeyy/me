@@ -84,6 +84,8 @@ group :development, :test do
 
   # Code analyze
   gem 'rubocop', '~> 0.39'
+  gem 'brakeman'
+
   # Test
   gem 'rspec-rails'
   gem 'factory_girl_rails'
