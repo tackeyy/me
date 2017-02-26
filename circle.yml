@@ -1,0 +1,14 @@
+machine:
+  timezone:
+    Asia/Tokyo
+  environment:
+  ruby:
+    version: 2.3.1
+dependencies:
+  cache_directories:
+    - 'vendor/bundle'
+    - 'node_modules'
+  override:
+    - bundle -j4 --path=vendor/bundle
+  pre:
+    - gem install bundler --pre
