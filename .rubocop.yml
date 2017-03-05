@@ -1,6 +1,5 @@
 AllCops:
   Exclude:
-    - "app/**/*"
     - "vendor/**/*"
     - "db/**/*"
     - "lib/**/*"
