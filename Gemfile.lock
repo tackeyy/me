@@ -124,8 +124,8 @@ GEM
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0)
-    enumerize (2.0.0)
-      activesupport (>= 3.2)
+    enum_help (0.0.17)
+      activesupport (>= 3.0.0)
     erubis (2.7.0)
     excon (0.52.0)
     execjs (2.7.0)
@@ -500,7 +500,7 @@ DEPENDENCIES
   compass-rails
   dotenv-rails
   draper
-  enumerize
+  enum_help
   factory_girl_rails
   fog
   font-awesome-rails

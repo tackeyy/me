@@ -16,7 +16,7 @@ class PostDecorator < Draper::Decorator
     renderer = Redcarpet::Render::HTML.new(OPTIONS)
     markdown = Redcarpet::Markdown.new(renderer, EXTENSIONS)
 
-    markdown.render(model.body).safe_join
+    markdown.render(model.body).html_safe
   end
 
   def tag_label(tag_name)
@@ -24,8 +24,8 @@ class PostDecorator < Draper::Decorator
   end
 
   def status_label
-    label_color = model.status.wip? ? 'label-default' : 'label-primary'
-    h.content_tag(:span, model.status_text, class: "label #{label_color}")
+    label_color = model.wip? ? 'label-default' : 'label-primary'
+    h.content_tag(:span, model.status_i18n, class: "label #{label_color}")
   end
 
   def published_at

@@ -5,7 +5,7 @@ module Users::CategoriesHelper
         :div, nested_categories(sub_categories),
         class: 'nested_categories'
       )
-    end.join.safe_join
+    end.join.html_safe
   end
 
   def selectable_categories(category)
