@@ -1,7 +1,7 @@
 puts ENV['CIRCLE_BRANCH']
 puts ENV
 puts '----------------------------------------------------------'
-rails if ENV['CIRCLE_BRANCH'] == 'master'
+abort if ENV['CIRCLE_BRANCH'] == 'master'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
