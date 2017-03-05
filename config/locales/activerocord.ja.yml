@@ -27,8 +27,3 @@ ja:
               too_short: パスワードは8文字以上にしてください。
             password_confirmation:
               blank: パスワードを入力してください。
-  enumerize:
-    post:
-      status:
-        wip: 'WIP'
-        published: '公開中'

@@ -1,0 +1,6 @@
+ja:
+  enums:
+    post:
+      status:
+        wip: 'WIP'
+        published: '公開中'

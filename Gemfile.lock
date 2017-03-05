@@ -62,6 +62,7 @@ GEM
       sass (>= 3.3.4)
     bootswatch-rails (3.3.5)
       railties (>= 3.1)
+    brakeman (3.5.0)
     builder (3.2.2)
     byebug (9.0.5)
     capistrano (3.4.1)
@@ -123,8 +124,8 @@ GEM
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0)
-    enumerize (2.0.0)
-      activesupport (>= 3.2)
+    enum_help (0.0.17)
+      activesupport (>= 3.0.0)
     erubis (2.7.0)
     excon (0.52.0)
     execjs (2.7.0)
@@ -486,6 +487,7 @@ DEPENDENCIES
   better_errors
   bootstrap-sass (~> 3.3.6)
   bootswatch-rails
+  brakeman
   byebug
   capistrano (~> 3.4.0)
   capistrano-bundler
@@ -498,7 +500,7 @@ DEPENDENCIES
   compass-rails
   dotenv-rails
   draper
-  enumerize
+  enum_help
   factory_girl_rails
   fog
   font-awesome-rails

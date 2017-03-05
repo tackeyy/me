@@ -13,14 +13,12 @@
 #
 
 class Post < ActiveRecord::Base
-  extend Enumerize
-
   RECENT_POSTS_CONT = 5
   LATEST_POSTS_COUNT = 3
 
   acts_as_taggable
 
-  enumerize :status, in: { wip: 0, published: 1 }
+  enum status: { wip: 0, published: 1 }
 
   belongs_to :category
   belongs_to :user

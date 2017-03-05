@@ -34,7 +34,7 @@ gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'ancestry'
 
 # Enum
-gem 'enumerize'
+gem 'enum_help'
 
 # Polymophic
 gem 'acts-as-taggable-on', '~> 4.0'
@@ -84,6 +84,8 @@ group :development, :test do
 
   # Code analyze
   gem 'rubocop', '~> 0.39'
+  gem 'brakeman'
+
   # Test
   gem 'rspec-rails'
   gem 'factory_girl_rails'
