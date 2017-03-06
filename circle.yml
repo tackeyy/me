@@ -6,16 +6,14 @@ machine:
 dependencies:
   cache_directories:
     - 'vendor/bundle'
-    - 'node_modules'
-  override:
-    - bundle -j4 --path=vendor/bundle
-  pre:
-    - gem install bundler --pre
 test:
   pre:
     #- bundle exec rubocop
 deployment:
   production:
+    test:
+      override:
+        -
     branch: master
     commands:
       - bundle exec cap production deploy
