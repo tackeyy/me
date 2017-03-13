@@ -2,13 +2,12 @@ class PostDecorator < Draper::Decorator
   delegate_all
 
   OPTIONS = {
-    # NOTE: gistを表示したいため以下のオプションを外す
-    # filter_html:     true,
     hard_wrap:       true,
     link_attributes: { rel: 'nofollow', target: '_blank' }
   }.freeze
 
   EXTENSIONS = {
+    filter_html:     true,
     autolink:           true,
     superscript:        true,
     tables:             true
