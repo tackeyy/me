@@ -2,18 +2,19 @@ class PostDecorator < Draper::Decorator
   delegate_all
 
   OPTIONS = {
-    filter_html:     true,
     hard_wrap:       true,
     link_attributes: { rel: 'nofollow', target: '_blank' }
   }.freeze
 
   EXTENSIONS = {
+    filter_html:     true,
     autolink:           true,
-    superscript:        true
+    superscript:        true,
+    tables:             true
   }.freeze
 
   def body_as_html
-    renderer = Redcarpet::Render::HTML.new(OPTIONS)
+    renderer = Redcarpet::Render::OriginalHTML.new(OPTIONS)
     markdown = Redcarpet::Markdown.new(renderer, EXTENSIONS)
 
     markdown.render(model.body).html_safe
