@@ -62,6 +62,9 @@ gem 'carrierwave'
 gem 'fog', require: 'fog/aws'
 gem 'mini_magick'
 
+# Tracking
+gem 'google-analytics-rails', '1.1.0'
+
 group :development, :test do
   # Debugger
   gem 'byebug'
