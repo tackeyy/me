@@ -7,6 +7,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # config
 gem 'dotenv-rails'
 
+# Tracking
+gem 'google-analytics-rails'
+
 # UI/UX
 gem 'slim-rails'
 gem 'jquery-rails'
@@ -61,9 +64,6 @@ gem 'seed-fu'
 gem 'carrierwave'
 gem 'fog', require: 'fog/aws'
 gem 'mini_magick'
-
-# Tracking
-gem 'google-analytics-rails', '1.1.0'
 
 group :development, :test do
   # Debugger

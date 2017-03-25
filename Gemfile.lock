@@ -505,7 +505,7 @@ DEPENDENCIES
   factory_girl_rails
   fog
   font-awesome-rails
-  google-analytics-rails (= 1.1.0)
+  google-analytics-rails
   jquery-rails
   kaminari
   letter_opener_web
